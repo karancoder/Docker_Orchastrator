@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import ListContainers from "./components/ListContainers";
+import Modal from "./components/Modal";
+import DeployContainer from "./components/DeployContainer";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [deployContainerVisible, setDeployContainerVisible] = useState(false);
+
+    return (
+        <div className="App">
+            <div>
+                {deployContainerVisible && (
+                    <Modal setModalVisibility={setDeployContainerVisible}>
+                        <DeployContainer
+                            setModalVisibility={setDeployContainerVisible}
+                        />
+                    </Modal>
+                )}
+                <ListContainers
+                    isModalVisible={deployContainerVisible}
+                    setModalVisibility={setDeployContainerVisible}
+                />
+            </div>
+        </div>
+    );
 }
 
 export default App;

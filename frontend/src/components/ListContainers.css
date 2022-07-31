@@ -1,0 +1,21 @@
+.list-header {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.containers-list-data {
+    width: 100%;
+}
+
+.containers-list-data > .list-container-element:nth-child(2n) {
+    background-color: rgb(168, 204, 255);
+}
+
+.containers-list-data > .list-container-element:nth-child(2n + 1) {
+    background-color: rgb(228, 239, 255);
+}
+
+.containers-list-data > .list-container-header {
+    background-color: rgb(100, 170, 254);
+}

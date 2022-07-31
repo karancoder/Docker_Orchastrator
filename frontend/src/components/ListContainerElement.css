@@ -1,0 +1,18 @@
+.list-container-element,
+.list-container-header {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 4fr 2fr 1fr 1fr 1fr;
+}
+
+.list-container-element > *,
+.list-container-header > * {
+    min-width: 0;
+    padding: 0.5rem;
+    overflow-wrap: break-word;
+}
+
+.list-container-header > * {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
